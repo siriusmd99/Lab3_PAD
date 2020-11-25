@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+    
+    imgshare_php-httpd:
+        build: 
+              context: .
+              dockerfile: Dockerfile 
+        image: php:7.3-apache
+        ports:
+            - 80:80
+        volumes:
+            - "./imgshare:/var/www/html"
+
+    imgshare_mariadb:
+        image: mariadb:10.5.2
+        ports:
+            - 3306:3306
+        volumes:
+            - mariadb-volume:/var/lib/mysql
+            - ./mysql_init/db_dump.sql:/docker-entrypoint-initdb.d/db_dump.sql
+            - ./mysql_init/init.sql:/docker-entrypoint-initdb.d/init.sql
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "root_s3Cr3t_pwd"
+            MYSQL_DATABASE: 'imgshare'
+
+volumes:
+    mariadb-volume:
