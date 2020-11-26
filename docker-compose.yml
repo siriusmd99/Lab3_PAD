@@ -21,8 +21,10 @@ services:
             - ./mysql_init/db_dump.sql:/docker-entrypoint-initdb.d/db_dump.sql
             - ./mysql_init/init.sql:/docker-entrypoint-initdb.d/init.sql
         environment:
-            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-            MYSQL_ROOT_PASSWORD: "root_s3Cr3t_pwd"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+            MYSQL_ROOT_PASSWORD: ""
+            MYSQL_USER: 'admin'
+            MYSQL_PASSWORD: 's3cr3t_pWd'
             MYSQL_DATABASE: 'imgshare'
 
 volumes:
