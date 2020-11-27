@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo rmdir /var/www/html
-sudo mkdir -vp /var/www/html
+rm -rf /var/www/html
+mkdir -vp /var/www/html
