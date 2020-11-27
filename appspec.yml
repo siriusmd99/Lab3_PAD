@@ -1,8 +1,8 @@
 version: 1.0
 os: linux
 files:
-  - source: /imgshare/
-    destination: /var/www/html
+  - source: ./imgshare/includes/config.ini
+    destination: /var/www/html/
 hooks:
   ApplicationStop:
     - location: /bin/true
