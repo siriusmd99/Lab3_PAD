@@ -1,6 +1,3 @@
 #!/bin/bash
-
-if [ -d /var/www/html ]; then
-    rm -rf /var/www/html
-fi
+rm -rf /var/www/html
 mkdir -vp /var/www/html
