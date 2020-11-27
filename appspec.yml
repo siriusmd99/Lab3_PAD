@@ -4,7 +4,7 @@ files:
   - source: /imgshare/
     destination: /var/www/html/
 hooks:
-    BeforeInstall:
-        - location: /scripts/clean.sh
-        timeout: 300
-        runas: root
+   BeforeInstall:
+     - location: /scripts/clean.sh
+       timeout: 10
+       runas: root
