@@ -3,3 +3,6 @@ os: linux
 files:
   - source: /imgshare/
     destination: /var/www/html/
+hooks:
+    BeforeInstall:
+        - location: /opt/codedeploy-agent/scripts/clean.sh
