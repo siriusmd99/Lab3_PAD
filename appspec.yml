@@ -5,4 +5,4 @@ files:
     destination: /var/www/html/
 hooks:
     BeforeInstall:
-        - location: /scripts/clean.sh
+        - location: scripts/clean.sh
