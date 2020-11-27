@@ -3,7 +3,8 @@ os: linux
 files:
   - source: /imgshare/
     destination: /var/www/html/
-    overwrite: true
-#hooks:
-    #BeforeInstall:
-        #- location: /scripts/clean.sh
+hooks:
+    BeforeInstall:
+        - location: /scripts/clean.sh
+        timeout: 300
+        runas: root
