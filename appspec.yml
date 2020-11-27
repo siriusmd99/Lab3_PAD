@@ -3,24 +3,3 @@ os: linux
 files:
   - source: /imgshare/
     destination: /var/www/html/
-hooks:
-  ApplicationStop:
-    - location: /bin/true
-      timeout: 10
-      runas: root
-  BeforeInstall:
-    - location: /bin/true
-      timeout: 10
-      runas: root
-  AfterInstall:
-    - location: /bin/true
-      timeout: 10
-      runas: root
-  ApplicationStart:
-    - location: /bin/true
-      timeout: 10
-      runas: root
-  ValidateService:
-    - location: /bin/true
-      timeout: 10
-      runas: root
